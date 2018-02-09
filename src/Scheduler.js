@@ -30,7 +30,11 @@ class Scheduler {
     // Otherwise, perform another loop iteration
     run() {
         while (!this.allEmpty()) {
-            this.clock = Date.now()
+            this.workTime = this.clock - Date.now();
+            this.clock = Date.now();
+            if (!this.blockingQueue.isEmpty()) {
+                setTimeout(this.blockingQueue.pop()(), this.workTime);
+            }
         }
     }
 
