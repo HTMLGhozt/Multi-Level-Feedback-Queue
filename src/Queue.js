@@ -20,33 +20,33 @@ class Queue {
     // Also sets the input process's parent queue to this queue
     // Return the newly added process
     enqueue(process) {
-        
+
     }
 
     // Removes the least-recently added process from the list of processes
     // Return the newly-removed process
     dequeue() {
-        
+
     }
 
     // Return the least-recently added process without removing it from the list of processes
     peek() {
-        
+
     }
 
     // Checks to see if there are any processes in the list of processes
     isEmpty() {
-
+        return this.processes.length === 0;
     }
 
     // Return this queue's priority level
     getPriorityLevel() {
-        
+
     }
 
     // Return this queue's queueType
     getQueueType() {
-        
+
     }
 
     // Manages a process's execution for the appropriate amount of time
@@ -67,14 +67,14 @@ class Queue {
     // Peeks the next process and runs its `executeProcess` method with input `time`
     // Call `this.manageTimeSlice` with the peeked process and input `time`
     doCPUWork(time) {
-        
+
     }
 
     // Execute a blocking process
     // Peeks the next process and runs its `executeBlockingProcess` method with input `time`
     // Call `this.manageTimeSlice` with the peeked process and input `time`
     doBlockingWork(time) {
-        
+
     }
 
     // The queue's interrupt handler for notifying when a process needs to be moved to a different queue

@@ -29,12 +29,17 @@ class Scheduler {
     // If yes, then break out of the infinite loop
     // Otherwise, perform another loop iteration
     run() {
-        
+        while (!this.allEmpty()) {
+            this.clock = Date.now()
+        }
     }
 
     // Checks that all queues have no processes 
     allEmpty() {
-        
+        if (!this.blockingQueue.isEmpty()) {
+            return false;
+        };
+        return this.runningQueues.every(q => q.isEmpty());
     }
 
     // Adds a new process to the highest priority level running queue
